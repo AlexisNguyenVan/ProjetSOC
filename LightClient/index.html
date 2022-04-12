@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8">
+    <!-- The title of the page is written in the tab of the browser. -->
+    <title>My first Web Services UI client</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+</head>
+<body>
+
+
+    <div>
+        <label for="apiKey">Api key:</label>
+        <input id="apiKey" type="text">
+        <button onclick="retrieveAllContracts();">Retrieve Contracts</button>
+        <script type="text/javascript" src="main.js"></script>
+    </div>
+    <div>
+        <label for="in">Contract:</label>
+        <input id="contract" list="contracts">
+        <datalist id="contracts"></datalist>
+    </div>
+    <div>
+        <label for="lat">Latitude:</label>
+        <input id="lat" type="text">
+        <label for="long">Longitude:</label>
+        <input id="long" type="text">
+        <input id="closest" readonly="readonly">
+        <button onclick="getClosestStation();">Get Closest Station</button>
+    </div>
+<div class="mapContainer">
+    <div id="map"></div>
+    <script src="./main.js"></script>
+</div>
+</body>
+</html>
