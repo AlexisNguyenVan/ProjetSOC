@@ -17,6 +17,11 @@ namespace core
     {
         public double latitude { get; set; }
         public double longitude { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(latitude)}: {latitude}, {nameof(longitude)}: {longitude}";
+        }
     }
 
     public class Availabilities
@@ -27,24 +32,30 @@ namespace core
         public int electricalBikes { get; set; }
         public int electricalInternalBatteryBikes { get; set; }
         public int electricalRemovableBatteryBikes { get; set; }
+
+        public override string ToString()
+        {
+            return $"\n\t{nameof(bikes)}: {bikes}\n\t {nameof(stands)}: {stands}\n\t {nameof(mechanicalBikes)}: {mechanicalBikes}\n\t {nameof(electricalBikes)}: {electricalBikes}\n\t {nameof(electricalInternalBatteryBikes)}: {electricalInternalBatteryBikes}\n\t {nameof(electricalRemovableBatteryBikes)}: {electricalRemovableBatteryBikes}\n";
+        }
     }
 
-    public class TotalStands
+    public class Stands
     {
         public Availabilities availabilities { get; set; }
         public int capacity { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(availabilities)}: {availabilities}\n {nameof(capacity)}: {capacity}\n";
+        }
     }
 
-    public class MainStands
-    {
-        public Availabilities availabilities { get; set; }
-        public int capacity { get; set; }
-    }
 
     public class JCDecauxItem
 
     {
         public int number { get; set; }
+
         public string contractName { get; set; }
         public string name { get; set; }
         public string address { get; set; }
@@ -56,19 +67,45 @@ namespace core
         public bool connected { get; set; }
         public bool overflow { get; set; }
         public object shape { get; set; }
-        public TotalStands totalStands { get; set; }
-        public MainStands mainStands { get; set; }
+        public Stands totalStands { get; set; }
+        public Stands mainStands { get; set; }
         public object overflowStands { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(number)}: {number}\n {nameof(contractName)}: {contractName}\n {nameof(name)}: {name}\n {nameof(address)}: {address}\n {nameof(position)}: {position}\n {nameof(banking)}: {banking}\n {nameof(bonus)}: {bonus}\n {nameof(status)}: {status}\n {nameof(lastUpdate)}: {lastUpdate}\n {nameof(connected)}: {connected}\n {nameof(overflow)}: {overflow}\n {nameof(shape)}: {shape}\n {nameof(totalStands)}: {totalStands}\n {nameof(mainStands)}: {mainStands}\n {nameof(overflowStands)}: {overflowStands}\n";
+        }
 
 
         public JCDecauxItem(string key)
         {
-            string[] keys=key.Split('_');
-            this.BuildItem(keys[0], Int32.Parse(keys[1]));
+            if (key!=null)
+            {
+                string[] keys = key.Split('_');
+                Console.Write(keys[0]);
+                Console.Write(keys[1]);
+                JCDecauxItem result = Task.Run(async () => await BuildItem(keys[0], Int32.Parse(keys[1]))).Result ;
+                this.name = result.name;
+                this.number = result.number;
+                this.position= result.position;
+                this.banking = result.banking;
+                this.bonus = result.bonus;
+                this.status = result.status;
+                this.lastUpdate = result.lastUpdate;
+                this.connected = result.connected;
+                this.overflow = result.overflow;
+                this.shape = result.shape;
+                this.totalStands = result.totalStands;
+                this.mainStands = result.mainStands;
+                this.address= result.address;
+                this.contractName = result.contractName;
+                this.overflowStands= result.overflowStands;
+            }
+           
         }
 
 
-        async public void BuildItem(string contract,int id)
+        public static async Task<JCDecauxItem> BuildItem(string contract,int id)
         {
             try
             {
@@ -79,18 +116,12 @@ namespace core
                 string responseBody = await response.Content.ReadAsStringAsync();
                 // Above three lines can be replaced with new helper method below
                 // string responseBody = await client.GetStringAsync(uri);
-                Console.Write(responseBody);
                 List<JCDecauxItem> items = JsonConvert.DeserializeObject<List<JCDecauxItem>>(responseBody);
                 foreach (JCDecauxItem item in items)
                 {
                     if (item.number == id)
                     {
-                        this.name=item.name;
-                        this.contractName=item.contractName;
-                        this.mainStands = item.mainStands;
-                        this.number=item.number;
-                        this.address = item.address;
-                        this.position=item.position;
+                        return item;
                     }
                 }
                 
@@ -100,7 +131,8 @@ namespace core
                 Console.WriteLine("\nException Caught!");
                 Console.WriteLine("Message :{0} ", e.Message);
             }
-            Console.ReadLine();
+
+            return null;
         }
 
 

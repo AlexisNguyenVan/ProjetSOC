@@ -12,17 +12,17 @@ namespace core
     internal class ProxyCache<T>
     {
         ObjectCache cache = MemoryCache.Default;
-        public DateTimeOffset dt_default;
+        public DateTimeOffset dt_default=new DateTimeOffset(DateTime.Now).AddMinutes(5);
+        
 
         public T Get(string CacheItemName)
         {
             
             if (!cache.Contains(CacheItemName))
             {
-                var value = Activator.CreateInstance(
-                    typeof(T),
-                    new object[] { CacheItemName });
-                cache.Add(CacheItemName,value , dt_default);
+                T item =  (T)Activator.CreateInstance(typeof(T), new object[] { CacheItemName });
+                Console.WriteLine("passage");
+                cache.Add(CacheItemName,item, dt_default);
             }
             return (T)cache.Get(CacheItemName);
         }
@@ -63,7 +63,7 @@ namespace core
             //loop through all key-value pairs and print them
             foreach (var item in this.cache)
             {
-                Console.WriteLine("cache object key-value: " + item.Key + "-" + item.Value);
+                Console.WriteLine("cache object key-value: " + item.Key + "-" + item.Value.ToString());
             }
         }
     }
