@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Caching;
 
-namespace core
+namespace ProxyCache
 {
-    internal class ProxyCache<T>
+    public class ProxyCache<T>
     {
         ObjectCache cache = MemoryCache.Default;
         public DateTimeOffset dt_default=new DateTimeOffset(DateTime.Now).AddMinutes(5);
@@ -21,7 +21,6 @@ namespace core
             if (!cache.Contains(CacheItemName))
             {
                 T item =  (T)Activator.CreateInstance(typeof(T), new object[] { CacheItemName });
-                Console.WriteLine("passage");
                 cache.Add(CacheItemName,item, dt_default);
             }
             return (T)cache.Get(CacheItemName);
