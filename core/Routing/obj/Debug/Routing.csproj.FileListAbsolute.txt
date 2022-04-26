@@ -1,0 +1,14 @@
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\bin\Debug\Routing.exe.config
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\bin\Debug\Routing.exe
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\bin\Debug\Routing.pdb
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\bin\Debug\ProxyCache.exe
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\bin\Debug\ProxyCache.pdb
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\bin\Debug\ProxyCache.exe.config
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\obj\Debug\Routing.csproj.AssemblyReference.cache
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\obj\Debug\Routing.csproj.SuggestedBindingRedirects.cache
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\obj\Debug\Routing.csproj.CoreCompileInputs.cache
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\obj\Debug\Routing.csproj.CopyComplete
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\obj\Debug\Routing.exe
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\Routing\obj\Debug\Routing.pdb

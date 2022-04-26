@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hc9VYxuDIMTrFe0stoeIFdaFSS32TKdt+SBAsIYqlVkwOa/OG5cd0jSp0ljFdPfu1Nvc5Q4pvDzdMl1CtMlM3w==",
+  "dgSpecHash": "0nDM4gRBa2HiqWn8krXiOjiXSNOJSViQDjtNPE5mSvbCsjBFIblzVyub8oY3s7dXWWnah7UGemDfG1Qf/cmYxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj",
+  "projectFilePath": "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ngnva\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\ngnva\\.nuget\\packages\\microsoft.extensions.objectpool\\5.0.10\\microsoft.extensions.objectpool.5.0.10.nupkg.sha512",
@@ -20,7 +20,11 @@
     "C:\\Users\\ngnva\\.nuget\\packages\\system.security.permissions\\5.0.0\\system.security.permissions.5.0.0.nupkg.sha512",
     "C:\\Users\\ngnva\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\ngnva\\.nuget\\packages\\system.servicemodel.primitives\\4.9.0\\system.servicemodel.primitives.4.9.0.nupkg.sha512",
-    "C:\\Users\\ngnva\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\ngnva\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\ngnva\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\ngnva\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ngnva\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ngnva\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

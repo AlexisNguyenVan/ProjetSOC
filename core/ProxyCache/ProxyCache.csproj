@@ -90,7 +90,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="cache\ProxyCache.cs" />
     <Compile Include="service\Proxy.cs" />
-    <Compile Include="service\ProxyInterface.cs" />
+    <Compile Include="service\IProxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

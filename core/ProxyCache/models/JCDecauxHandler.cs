@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 
 namespace ProxyCache
 {
-    public class JCDecauxHandler
+    public static class JCDecauxHandler
     {
-        string apiKey = "1c7f71a6f2090235c69e3a96e7fc85feb1fae21b";
-        HttpClient client = new HttpClient();
+        static string apiKey = "1c7f71a6f2090235c69e3a96e7fc85feb1fae21b";
+        static HttpClient client = new HttpClient();
 
-        public Station getItem(string key)
+        public static DynamicStation getItem(string key)
         {
             if (key != null)
             {
@@ -25,21 +25,15 @@ namespace ProxyCache
 
         }
 
-        public async Task<Station> GetStation(string contractName, int id)
+        public static async Task<DynamicStation> GetStation(string contractName, int id)
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync("https://api.jcdecaux.com/vls/v3/stations?contract=" + contractName + "&apiKey=" + this.apiKey);
+                HttpResponseMessage response = await client.GetAsync("https://api.jcdecaux.com/vls/v3/stations/"+id+"?contract=" + contractName + "&apiKey=" + apiKey);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                List<Station> stations = JsonConvert.DeserializeObject<List<Station>>(responseBody);
-                foreach (Station station in stations)
-                {
-                    if (station.number == id)
-                    {
-                        return station;
-                    }
-                }
+                DynamicStation dynamicStation = JsonConvert.DeserializeObject<DynamicStation>(responseBody);
+                return dynamicStation;
             }
             catch (HttpRequestException e)
             {
@@ -50,14 +44,14 @@ namespace ProxyCache
             return null;
         }
 
-        public async Task<List<Station>> GetAllStations()
+        public static async Task<List<StaticStation>> GetAllStations()
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync("https://api.jcdecaux.com/vls/v2/stations?apiKey=" +this.apiKey);
+                HttpResponseMessage response = await client.GetAsync("https://api.jcdecaux.com/vls/v2/stations?apiKey=" +apiKey);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                List<Station> stations = JsonConvert.DeserializeObject<List<Station>>(responseBody);
+                List<StaticStation> stations = JsonConvert.DeserializeObject<List<StaticStation>>(responseBody);
                 return stations;
             }
             catch (HttpRequestException e)

@@ -10,7 +10,7 @@ namespace ProxyCache
 {
 
     [ServiceContract]
-    internal interface ProxyInterface
+    internal interface IProxy
     {
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
@@ -21,5 +21,6 @@ namespace ProxyCache
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "timeStation?stationKey={stationKey}&time={time}")]
         JCDecauxItem TimeGetStation(string stationKey,double time);
+
     }
 }

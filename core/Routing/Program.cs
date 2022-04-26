@@ -1,21 +1,20 @@
-﻿using System;
+﻿using ProxyCache;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.ServiceModel;
-using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace ProxyCache
+namespace Routing
 {
+
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-
-            // Create the ServiceHost.
-            using (ServiceHost host = new ServiceHost(typeof(Proxy)))
+            using (ServiceHost host = new ServiceHost(typeof(Routing)))
             {
 
                 // Open the ServiceHost to start listening for messages. Since
@@ -23,15 +22,13 @@ namespace ProxyCache
                 // one endpoint per base address for each service contract implemented
                 // by the service.
                 host.Open();
-                Console.WriteLine("Proxy working...");
+                Console.WriteLine("Routing working...");
                 Console.WriteLine("Press <Enter> to stop the service.");
                 Console.ReadLine();
 
                 // Close the ServiceHost.
                 host.Close();
             }
-
-
         }
     }
 }

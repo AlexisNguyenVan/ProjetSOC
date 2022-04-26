@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj": {}
+    "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj": {
+    "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj",
+        "projectUniqueName": "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj",
         "projectName": "Main",
-        "projectPath": "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj",
+        "projectPath": "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\Main.csproj",
         "packagesPath": "C:\\Users\\ngnva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\obj\\",
+        "outputPath": "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\Main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ngnva\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj": {
-                "projectPath": "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj"
+              "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj": {
+                "projectPath": "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj"
               }
             }
           }
@@ -59,20 +59,38 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.13, 5.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj": {
+    "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj",
+        "projectUniqueName": "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj",
         "projectName": "ProxyCache",
-        "projectPath": "C:\\Users\\ngnva\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj",
+        "projectPath": "C:\\Users\\ngnva\\Desktop\\OneDrive - Université Nice Sophia Antipolis\\SI4\\Cours\\SOC\\ProjetSOC\\core\\ProxyCache\\ProxyCache.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}
