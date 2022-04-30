@@ -1,16 +1,12 @@
-function getRoute(coordS, coordE) {
+function getRoute() {
     // Create an array containing the GPS positions you want to draw
-    console.log("entrée:"+coordS);
-    console.log("entrée2:"+coordE);
-    var coordinates = [coordS, coordE];
-
-    var start = coordinates[0].toString();
-    var end = coordinates[1].toString();
-
+    var start =document.getElementById("start").value
+    var end =document.getElementById("end").value
+    
     console.log(start);
     console.log(end);
-    var url = "https://dev.virtualearth.net/REST/v1/Routes/Walking?wp.0=" + start + "&wp.1=" + end +
-        "&routeAttributes=routePath&key=" + "AlS6X5SDL-NZamisSXA_EMRWvm-8zpNK1rDxM6tMwOHHQ_e2nIwYWaSLywYnM4D7";
+
+    var url = "http://localhost:8001/Routing/path?startName="+start+"&endName="+end;
     console.log(url);
     var xhr = new XMLHttpRequest();
 
@@ -38,28 +34,20 @@ function getRoute(coordS, coordE) {
     xhr.ontimeout = function (e) { console.log("timeout"); }
 
     xhr.open("GET", url, true);
-    xhr.timeout = 3000;
+    xhr.timeout = 20000;
     xhr.send();
     xhr.onload = placePoints;
 }
 
-function placePoints() {
-    var json = JSON.parse(this.responseText);
-    var locations = json.resourceSets[0].resources[0].routePath.line.coordinates;
-    // OpenLayers uses [lon, lat], not [lat, lon] for coordinates
-    locations.map(function (l) {
-        return l.reverse();
-    });
-
-
-    var polyline = new ol.geom.LineString(locations);
+function drawRoute(coords,color){
+    var polyline = new ol.geom.LineString(coords);
     // Coordinates need to be in the view's projection, which is
     // 'EPSG:3857' if nothing else is configured for your ol.View instance
     polyline.transform('EPSG:4326', 'EPSG:3857');
     // Configure the style of the line
     var lineStyle = new ol.style.Style({
         stroke: new ol.style.Stroke({
-            color: '#0000CD',
+            color: color,
             width: 3
         })
     });
@@ -76,17 +64,13 @@ function placePoints() {
    
 }
 
-
-function contractsRetrieved() {
+function placePoints() {
     var json = JSON.parse(this.responseText);
-    for (var i = 0; i < json.length; i++) {
-        var obj = json[i];
-        console.log(obj);
-        var option = document.createElement("option");
-        option.setAttribute("value", obj.name);
-        document.getElementById("contracts").appendChild(option);
-    }
+    drawRoute(json[0],'#0000CD')
+    drawRoute(json[1],'#0000CD')
+    drawRoute(json[2],'#0000CD')
 }
+
 
 function retrieveAllContracts() {
     var key = document.getElementById("apiKey").value;

@@ -12,25 +12,13 @@
 </head>
 <body>
 
-
-    <div>
-        <label for="apiKey">Api key:</label>
-        <input id="apiKey" type="text">
-        <button onclick="retrieveAllContracts();">Retrieve Contracts</button>
-        <script type="text/javascript" src="main.js"></script>
-    </div>
-    <div>
-        <label for="in">Contract:</label>
-        <input id="contract" list="contracts">
-        <datalist id="contracts"></datalist>
-    </div>
-    <div>
-        <label for="lat">Latitude:</label>
-        <input id="lat" type="text">
-        <label for="long">Longitude:</label>
-        <input id="long" type="text">
-        <input id="closest" readonly="readonly">
-        <button onclick="getClosestStation();">Get Closest Station</button>
+    <div class="stuff">
+            <label for="start">Départ: </label>
+            <input id="start" type="text">
+            <label for="start">Arrivée: </label>
+            <input id="end" type="text">
+            <button onclick="getRoute();">GO</button>
+            <script type="text/javascript" src="main.js"></script>
     </div>
 <div class="mapContainer">
     <div id="map"></div>

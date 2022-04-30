@@ -21,7 +21,9 @@ namespace Routing
 
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "path?startLat={startLat}&startLon={startLon}&endLat={endLat}&endLon={endLon}")]
-        DynamicStation GetPath(double startLat, double startLon, double endLat,double endLon);
+            UriTemplate = "path?startName={startName}&endName={endName}")]
+        List<List<List<double>>> GetPath(string startName,string endName);
+
+
     }
 }

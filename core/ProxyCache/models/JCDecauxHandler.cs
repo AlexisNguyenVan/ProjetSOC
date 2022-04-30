@@ -48,10 +48,15 @@ namespace ProxyCache
         {
             try
             {
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
                 HttpResponseMessage response = await client.GetAsync("https://api.jcdecaux.com/vls/v2/stations?apiKey=" +apiKey);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                List<StaticStation> stations = JsonConvert.DeserializeObject<List<StaticStation>>(responseBody);
+                List<StaticStation> stations = JsonConvert.DeserializeObject<List<StaticStation>>(responseBody,settings);
                 return stations;
             }
             catch (HttpRequestException e)

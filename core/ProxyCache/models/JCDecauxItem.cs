@@ -19,6 +19,11 @@ namespace ProxyCache
     {
         public double latitude { get; set; }
         public double longitude { get; set; }
+
+        public double[] toArray()
+        {
+            return new double[] { latitude, longitude };
+        }
     }
 
     public class Availabilities

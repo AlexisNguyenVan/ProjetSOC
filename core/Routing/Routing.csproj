@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRouting.cs" />
+    <Compile Include="OpenRouteResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Routing.cs" />
     <Compile Include="Utils.cs" />
