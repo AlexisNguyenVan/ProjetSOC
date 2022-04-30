@@ -145,7 +145,7 @@ namespace Routing
         public string source { get; set; }
         public string source_id { get; set; }
         public string name { get; set; }
-        public int confidence { get; set; }
+        public double confidence { get; set; }
         public string match_type { get; set; }
         public string accuracy { get; set; }
         public string country { get; set; }

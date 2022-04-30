@@ -1,4 +1,6 @@
 function getRoute() {
+
+    
     // Create an array containing the GPS positions you want to draw
     var start =document.getElementById("start").value
     var end =document.getElementById("end").value
@@ -66,9 +68,9 @@ function drawRoute(coords,color){
 
 function placePoints() {
     var json = JSON.parse(this.responseText);
-    drawRoute(json[0],'#0000CD')
-    drawRoute(json[1],'#0000CD')
-    drawRoute(json[2],'#0000CD')
+    drawRoute(json[0],'#FF0000')
+    drawRoute(json[1],'#0080FF')
+    drawRoute(json[2],'#FF0000')
 }
 
 

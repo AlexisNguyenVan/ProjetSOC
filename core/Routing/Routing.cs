@@ -87,6 +87,7 @@ namespace Routing
         {
             try
             {
+
                 Console.Write("Recherche pour: "+name);
                 HttpResponseMessage response = await client.GetAsync("https://api.openrouteservice.org/geocode/search?api_key="+openRoutekey+"&text="+name);
                 response.EnsureSuccessStatusCode();
