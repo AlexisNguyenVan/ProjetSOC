@@ -5,7 +5,32 @@
       "ProjectGuid": "05954f3d-52ac-4784-bb85-bd13f7ad4254",
       "DisplayName": "core",
       "ColorIndex": 0
+    },
+    "99a2015c-04df-4459-ac68-88015878a304": {
+      "ProjectGuid": "99a2015c-04df-4459-ac68-88015878a304",
+      "DisplayName": "Routing",
+      "ColorIndex": 1
+    },
+    "3810bea0-3fcf-46ca-9c69-09c0f5a674b1": {
+      "ProjectGuid": "3810bea0-3fcf-46ca-9c69-09c0f5a674b1",
+      "DisplayName": "ProxyCache",
+      "ColorIndex": 2
+    },
+    "a0ffd2cf-17dd-41f4-b3b0-5a959cc67b79": {
+      "ProjectGuid": "a0ffd2cf-17dd-41f4-b3b0-5a959cc67b79",
+      "DisplayName": "WcfServiceLibrary1",
+      "ColorIndex": 3
+    },
+    "02880e33-813b-43f1-868e-34db88dc225e": {
+      "ProjectGuid": "02880e33-813b-43f1-868e-34db88dc225e",
+      "DisplayName": "RoutingService",
+      "ColorIndex": 4
+    },
+    "b9e7c4aa-b1c7-4565-80cf-6e0b84b31085": {
+      "ProjectGuid": "b9e7c4aa-b1c7-4565-80cf-6e0b84b31085",
+      "DisplayName": "HeavyClient",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 6
 }

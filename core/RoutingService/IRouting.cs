@@ -15,12 +15,6 @@ namespace RoutingService
 
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "closestStation?lat={lat}&lon={lon}&isStart={isStart}")]
-        DynamicStation GetClosestStation(double lat, double lon, bool isStart);
-
-
-        [OperationContract]
-        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "path?startName={startName}&endName={endName}")]
         List<List<List<double>>> GetPath(string startName,string endName);
 

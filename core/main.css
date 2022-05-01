@@ -1,0 +1,36 @@
+﻿#map {
+    width: 100%;
+    height: 100vh;
+}
+
+.mapContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.stuff {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    padding: 1vw;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    bottom: 0;
+}
+
+input {
+    margin-top: 0.5vw;
+}
+
+button {
+    margin-top: 0.5vw;
+}
+
+body {
+    margin: 0;
+}

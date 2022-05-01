@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8">
+    <!-- The title of the page is written in the tab of the browser. -->
+    <title>My first Web Services UI client</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+</head>
+<body>
+
+<div class="stuff">
+    <label for="start">Départ: </label>
+    <input id="start" type="text">
+    <label for="start">Arrivée: </label>
+    <input id="end" type="text">
+    <button onclick="getRoute();">GO</button>
+    <script type="text/javascript" src="main.js"></script>
+</div>
+<div class="mapContainer">
+    <div id="map"></div>
+    <script src="./main.js"></script>
+</div>
+</body>
+</html>

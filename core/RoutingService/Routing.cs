@@ -22,7 +22,7 @@ namespace RoutingService
         private List<StaticStation> stations = JCDecauxHandler.GetAllStations().Result;
         static HttpClient client = new HttpClient();
        
-        public DynamicStation GetClosestStation(double lat, double lon,bool isStart)
+        private DynamicStation GetClosestStation(double lat, double lon,bool isStart)
         {
             Console.WriteLine("Requête GetClosestStation latitude: "+lat +" longitude: "+lon);
             double distance = Utils.GetDistanceFrom2GpsCoordinates(stations[0].position.latitude, stations[0].position.longitude,lat,lon);
@@ -64,7 +64,7 @@ namespace RoutingService
             return path;
         }
 
-        public async Task<DynamicStation> GetStationFromProxy(string key)
+        private async Task<DynamicStation> GetStationFromProxy(string key)
         {
             try
             {
@@ -105,12 +105,12 @@ namespace RoutingService
             return null;
         }
 
-        public async Task<List<List<double>>> getRoute(double[] start, double[] end,bool walking)
+        private async Task<List<List<double>>> getRoute(double[] start, double[] end,bool walking)
         {
             try
             {
                 HttpClient pathClient = new HttpClient();
-                string mode = "cycling-regular";
+                string mode = "cycling-road";
                 
                 if (walking)
                 {
