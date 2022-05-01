@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Routing" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ProxyCache" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRouting_GetClosestStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClosestStation" />
+  </wsdl:message>
+  <wsdl:message name="IRouting_GetClosestStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClosestStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRouting_GetPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPath" />
+  </wsdl:message>
+  <wsdl:message name="IRouting_GetPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRouting_GetTimeProxy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeProxy" />
+  </wsdl:message>
+  <wsdl:message name="IRouting_GetTimeProxy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeProxyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRouting">
+    <wsdl:operation name="GetClosestStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRouting/GetClosestStation" message="tns:IRouting_GetClosestStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRouting/GetClosestStationResponse" message="tns:IRouting_GetClosestStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRouting/GetPath" message="tns:IRouting_GetPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRouting/GetPathResponse" message="tns:IRouting_GetPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeProxy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRouting/GetTimeProxy" message="tns:IRouting_GetTimeProxy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRouting/GetTimeProxyResponse" message="tns:IRouting_GetTimeProxy_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEndPoint" type="tns:IRouting">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClosestStation">
+      <soap:operation soapAction="http://tempuri.org/IRouting/GetClosestStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <soap:operation soapAction="http://tempuri.org/IRouting/GetPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeProxy">
+      <soap:operation soapAction="http://tempuri.org/IRouting/GetTimeProxy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Routing">
+    <wsdl:port name="SOAPEndPoint" binding="tns:SOAPEndPoint">
+      <soap:address location="http://localhost:8001/Routing/SOAP" />
+    </wsdl:port>
+    <wsdl:port name="RESTEndPoint" binding="tns:SOAPEndPoint">
+      <soap:address location="http://localhost:8001/Routing/REST" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

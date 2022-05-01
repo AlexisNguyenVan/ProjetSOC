@@ -24,6 +24,9 @@ namespace Routing
             UriTemplate = "path?startName={startName}&endName={endName}")]
         List<List<List<double>>> GetPath(string startName,string endName);
 
+        [OperationContract]
+        double GetTimeProxy(string key);
+
 
     }
 }

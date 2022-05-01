@@ -2,7 +2,7 @@
 using ProxyCache;
 using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -143,6 +143,14 @@ namespace Routing
             return content;
         }
 
+        public double GetTimeProxy(string key)
+        {
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            this.GetStationFromProxy(key).Wait();
+            watch.Stop();
+            return watch.ElapsedMilliseconds;
+        }
     }
 
 

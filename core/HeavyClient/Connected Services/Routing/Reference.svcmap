@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="df45f0fb-8948-4ace-9044-026da297e303" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8001/Routing/MEX" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="e9e8c399-9ca5-42e4-a296-bfbc9e3be948" SourceId="1" SourceUrl="http://localhost:8001/Routing/MEX" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3818d0d0-296a-4f39-98d4-c8c03c359559" SourceId="1" SourceUrl="http://localhost:8001/Routing/MEX" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="879ad72c-463d-4fb6-aada-5146a299261f" SourceId="1" SourceUrl="http://localhost:8001/Routing/MEX" />
+    <MetadataFile FileName="ProxyCache.xsd" MetadataType="Schema" ID="99ba4b59-dd3a-4d43-a3d7-651658301dc3" SourceId="1" SourceUrl="http://localhost:8001/Routing/MEX" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="d8c5713f-2be6-483e-9260-56bffe15b273" SourceId="1" SourceUrl="http://localhost:8001/Routing/MEX" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,14 @@
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\bin\Debug\RoutingService.pdb
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\bin\Debug\ProxyCache.exe
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\bin\Debug\ProxyCache.pdb
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\bin\Debug\ProxyCache.exe.config
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\obj\Debug\RoutingService.csproj.AssemblyReference.cache
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\obj\Debug\RoutingService.csproj.CoreCompileInputs.cache
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\obj\Debug\RoutingService.csproj.CopyComplete
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\obj\Debug\RoutingService.pdb
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\bin\Debug\RoutingService.exe.config
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\bin\Debug\RoutingService.exe
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\obj\Debug\RoutingService.csproj.SuggestedBindingRedirects.cache
+C:\Users\ngnva\Desktop\OneDrive - Université Nice Sophia Antipolis\SI4\Cours\SOC\ProjetSOC\core\RoutingService\obj\Debug\RoutingService.exe
