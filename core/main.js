@@ -65,54 +65,61 @@ function drawRoute(coords, color) {
     });
     map.addLayer(vector);
 
+
 }
 
 function placePoints() {
+    map.getLayers().getArray()
+        .filter(layer => layer?.get('name') !== 'map')
+        .forEach(layer => map.removeLayer(layer));
+
     var json = JSON.parse(this.responseText);
     drawRoute(json[0], '#FF0000')
+    if (json.length == 3) {
+        var iconFeature = new ol.Feature({
+            geometry: new ol.geom.Point(ol.proj.fromLonLat([json[1][0][0], json[1][0][1]])),
+            name: 'Bike Station',
+            population: 4000,
+            rainfall: 500,
+        });
+        var iconFeature2 = new ol.Feature({
+            geometry: new ol.geom.Point(ol.proj.fromLonLat([json[2][0][0], json[2][0][1]])),
+            name: 'Bike Station',
+            population: 4000,
+            rainfall: 500,
+        });
 
-    var iconFeature = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([json[1][0][0], json[1][0][1]])),
-        name: 'Bike Station',
-        population: 4000,
-        rainfall: 500,
-    });
-    var iconFeature2 = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([json[2][0][0], json[2][0][1]])),
-        name: 'Bike Station',
-        population: 4000,
-        rainfall: 500,
-    });
+        var iconStyle = new ol.style.Style({
+            image: new ol.style.Icon({
+                anchor: [0.5, 0.5],
+                anchorXUnits: 'fraction',
+                anchorYUnits: 'pixels',
+                src: 'bike.png',
+                scale: 0.04
+            }),
+        });
 
-    var iconStyle = new ol.style.Style({
-        image: new ol.style.Icon({
-            anchor: [0.5, 0.5],
-            anchorXUnits: 'fraction',
-            anchorYUnits: 'pixels',
-            src: 'bike.png',
-            scale:0.04
-        }),
-    });
+        var source = new ol.source.Vector({
+            features: [iconFeature]
+        });
+        var source2 = new ol.source.Vector({
+            features: [iconFeature2]
+        });
 
-    var source = new ol.source.Vector({
-        features: [iconFeature]
-    });
-    var source2 = new ol.source.Vector({
-        features: [iconFeature2]
-    });
-
-    var vector = new ol.layer.Vector({
-        source: source,
-        style: [iconStyle]
-    });
-    var vector2 = new ol.layer.Vector({
-        source: source2,
-        style: [iconStyle]
-    });
-    map.addLayer(vector);
-    map.addLayer(vector2);
-    drawRoute(json[1], '#0080FF')
-    drawRoute(json[2], '#FF0000')
+        var vector = new ol.layer.Vector({
+            source: source,
+            style: [iconStyle]
+        });
+        var vector2 = new ol.layer.Vector({
+            source: source2,
+            style: [iconStyle]
+        });
+        map.addLayer(vector);
+        map.addLayer(vector2);
+        drawRoute(json[1], '#0080FF')
+        drawRoute(json[2], '#FF0000')
+        
+    }
     map.getView().setCenter(ol.proj.transform([json[0][0][0], json[0][0][1]], 'EPSG:4326', 'EPSG:3857'));
     map.getView().setZoom(15);
 }
@@ -122,7 +129,8 @@ var map = new ol.Map({
     target: "map", // <-- This is the id of the div in which the map will be built.
     layers: [
         new ol.layer.Tile({
-            source: new ol.source.OSM()
+            source: new ol.source.OSM(),
+            name:'map'
         })
     ],
 

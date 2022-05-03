@@ -30,7 +30,12 @@
       "ProjectGuid": "b9e7c4aa-b1c7-4565-80cf-6e0b84b31085",
       "DisplayName": "HeavyClient",
       "ColorIndex": 5
+    },
+    "fbe9dffb-525e-4ab4-b236-7dbf0aba87dc": {
+      "ProjectGuid": "fbe9dffb-525e-4ab4-b236-7dbf0aba87dc",
+      "DisplayName": "ThinClient",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }

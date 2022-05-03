@@ -186,7 +186,48 @@ namespace RoutingService
         public List<double> bbox { get; set; }
     }
 
+    public class DestinationT
+    {
+        public List<double> location { get; set; }
+        public double snapped_distance { get; set; }
+    }
 
+    public class SourceT
+    {
+        public List<double> location { get; set; }
+        public double snapped_distance { get; set; }
+    }
+
+    public class QueryT
+    {
+        public List<List<double>> locations { get; set; }
+        public string profile { get; set; }
+        public string responseType { get; set; }
+    }
+
+    public class EngineT
+    {
+        public string version { get; set; }
+        public DateTime build_date { get; set; }
+        public DateTime graph_date { get; set; }
+    }
+
+    public class MetadataT
+    {
+        public string attribution { get; set; }
+        public string service { get; set; }
+        public long timestamp { get; set; }
+        public Query query { get; set; }
+        public Engine engine { get; set; }
+    }
+
+    public class TimeResponse
+    {
+        public List<List<double>> durations { get; set; }
+        public List<DestinationT> destinations { get; set; }
+        public List<SourceT> sources { get; set; }
+        public MetadataT metadata { get; set; }
+    }
 
 
 }

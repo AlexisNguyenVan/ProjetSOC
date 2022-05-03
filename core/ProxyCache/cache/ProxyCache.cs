@@ -14,15 +14,6 @@ namespace ProxyCache
         ObjectCache cache = MemoryCache.Default;
         public DateTimeOffset dt_default=new DateTimeOffset(DateTime.Now).AddMinutes(5);
 
-
-        public void Add(string key, T item)
-        {
-            if (!cache.Add(key, item, dt_default))
-            {
-                Console.WriteLine("Erreur ajout dynamicStation key: "+key);
-            }
-        }
-
         public T Get(string CacheItemName)
         {
             

@@ -53,21 +53,87 @@ namespace RoutingService
         {
 
             List<List<List<double>>> path = new List<List<List<double>>>();
-
+            
             double[] start = GetPoint(startName).Result;
             double[] startStation = GetClosestStation(start[1], start[0], true).position.toArray().Reverse().ToArray();
-            path.Add(this.getRoute(start, startStation, false).Result);
             double[] end = GetPoint(endName).Result;
             double[] endStation = GetClosestStation(end[1], end[0], false).position.toArray().Reverse().ToArray();
-            path.Add(this.getRoute(startStation, endStation, false).Result);
-            path.Add(this.getRoute(endStation, end, false).Result);
+            if (IsWalkable(start, startStation, end, endStation))
+            {
+                path.Add(this.getRoute(start, end, true).Result);
+            }
+            else
+            {
+                path.Add(this.getRoute(start, startStation, true).Result);
+                path.Add(this.getRoute(startStation, endStation, false).Result);
+                path.Add(this.getRoute(endStation, end, true).Result);
+            }
             return path;
+        }
+
+        private bool IsWalkable(double[] start, double[] startStation, double[] end, double[] endStation)
+        {
+            double timeWalking = 0;
+            double timeCycling = 0;
+            try
+            {
+                timeWalking = this.getTime(start, end, true).Result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Calcul temps à pied raté.");
+                return false;
+            }
+            timeCycling = this.getTime(start, startStation, false).Result +
+                          this.getTime(startStation, endStation, false).Result +
+                          this.getTime(end, endStation, false).Result;
+            if (timeWalking >-1 && timeWalking < timeCycling)
+            {
+                return true;
+            }
+            else return false;
+
+        }
+
+        private async Task<double> getTime(double[] start, double[] end,bool walking)
+        {
+            try
+            {
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                string mode = "cycling-road";
+                if (walking)
+                {
+                    mode = "foot-walking";
+                }
+                HttpClient client = new HttpClient();
+                string json = buildContentTime(start, end);
+                var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", openRoutekey);
+                Console.Write("Calcul durée du trajet: start= " + start+" end="+end);
+                HttpResponseMessage response = await client.PostAsync("https://api.openrouteservice.org/v2/matrix/"+mode,httpContent);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                TimeResponse time = JsonConvert.DeserializeObject<TimeResponse>(responseBody,settings);
+                return time.durations[0][1];
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message :{0} ", e.Message);
+            }
+
+            return -1;
         }
 
         private async Task<DynamicStation> GetStationFromProxy(string key)
         {
             try
             {
+                HttpClient pathClient = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync("http://localhost:8000/Proxy/station?stationKey="+key);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
@@ -117,9 +183,8 @@ namespace RoutingService
                     mode = "foot-walking";
                 }
 
-                string test = buildContent(start, end);
-                Console.Write(test);
-                var httpContent = new StringContent(test, Encoding.UTF8, "application/json");
+                string json = buildContent(start, end);
+                var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
                 pathClient.DefaultRequestHeaders.Add("Authorization", openRoutekey);
                 HttpResponseMessage response = await pathClient.PostAsync("https://api.openrouteservice.org/v2/directions/" + mode+"/geojson",httpContent);
                 response.EnsureSuccessStatusCode();
@@ -143,8 +208,17 @@ namespace RoutingService
             return content;
         }
 
+        private string buildContentTime(double[] start, double[] end)
+        {
+            string content = "{\"locations\":[";
+            content += "[" + start[0].ToString().Replace(",", ".") + "," + start[1].ToString().Replace(",", ".") + "],";
+            content += "[" + end[0].ToString().Replace(",", ".") + "," + end[1].ToString().Replace(",", ".") + "]" + "]}";
+            return content;
+        }
+
         public double GetTimeProxy(string key)
         {
+            Console.WriteLine("Test du cache en passant par le routing.");
             Stopwatch watch = new Stopwatch();
             watch.Start();
             this.GetStationFromProxy(key).Wait();
